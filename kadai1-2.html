@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+    <!--
+    var instring = prompt("文字列を入力してください");
+
+    var keyword = prompt("除外するキーワードを入力してください");
+    var regkey = new RegExp(keyword, "g");
+    // 入力を受けたキーワードからRegExp型を作成(文字探索に使用)
+
+    var num_keys = (instring.match(regkey) || []).length;
+    // match関数によってinstringからkeywordを配列にコピーし、配列長を出現回数とする
+    var outstring = instring.replace(regkey, "" ) ;
+    // replace関数によってkeywordを除外する
+    var output = "キーワードの個数=" + num_keys + ", 新たな文字列=" + outstring;
+    // 出力文字列
+    window.alert(output);
+    //-->
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
