@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+  </head>
+  <body>
+    <div>
+      <button type="start" name="start" onclick="slideshow()">start</button>
+      <button type="stop" name="stop" onclick="stop_slideshow()">stop</button>
+    </div>
+    <img src="./img1.png" name="img1">
+    <script type="text/javascript">
+    <!--
+    var slide;
+
+    function next_image(){
+      var path = document.images["img1"].src;
+      // 画像ファイルのパスを取得
+      var img = path.match(".+/(.+?)\.[a-z]+([\?#;].*)?$")[1];
+      // 取得したパスからファイル名を取り出す
+
+      switch (img) { //画像ファイル名によって次に出す画像が決まる
+        case "img2":
+          document.images["img1"].src = "./img3.png";
+          break;
+
+        case "img3":
+          document.images["img1"].src = "./img1.png";
+          break;
+
+        default:
+          document.images["img1"].src = "./img2.png";
+          break;
+      }
+    }
+
+    function slideshow(){
+      // スライドショー開始時
+      slide = setInterval(next_image, 5000);
+    }
+
+    function stop_slideshow(){
+      // スライドショー終了時
+      clearInterval(slide);
+    }
+
+    //-->
+    </script>
+  </body>
+</html>
