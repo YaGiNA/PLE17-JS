@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <head>
+    <script type="text/javascript">
+      <!--
+      function setinCookie(attr, val){
+        var cData = attr + "=" + escape(val) + ";";
+        var presentDay = new Date;
+        var dd = presentDay.getDate();
+        dd = dd + 7;
+        presentDay.setDate(dd);
+        var expTime = presentDay.toGMTString();
+        document.cookie = cData + "expires=" + expTime;
+        console.log(document.cookie)
+      }
+
+
+      function ask_name(){
+        var visTimes=1;
+        var userName = prompt("名前を入力してください");
+        if (userName == ""){
+          ask_name();
+        }
+        var hobby = prompt("趣味を入力してください");
+        if (hobby == ""){
+          ask_name();
+        }
+        setinCookie("name", userName);
+        setinCookie("hobby", hobby);
+        setinCookie("visit", String(visTimes));
+      }
+
+
+      function change_hobby(){
+        var hobby = prompt("趣味を入力してください");
+        if (hobby == ""){
+          change_hobby();
+        }
+        setinCookie("hobby", hobby);
+      }
+
+
+      function writeData(ckName, ckHobby, ckVisit){
+        var idName = document.getElementById("name");
+        var idHobby = document.getElementById("hobby");
+        var idVisit = document.getElementById("visit");
+        idName.innerHTML = ckName
+        idHobby.innerHTML = ckHobby
+        idVisit.innerHTML = String(ckVisit)
+      }
+
+
+      function ckPickInfo(ckVisit){
+        var ck = document.cookie;
+        var ckItem = ck.split(";");
+        var ckName = ""
+        var ckHobby = ""
+        var isNameExist = 0;
+        var isHobbyExist = 0;
+        for(i=0; i<ckItem.length; i++){
+          var elem = ckItem[i].split("=");
+          if(elem[0].trim() == "name"){
+            ckName = unescape(elem[1]);
+            isNameExist = 1;
+          }
+          if(elem[0].trim() == "hobby"){
+            ckHobby = unescape(elem[1]);
+            isHobbyExist = 1;
+          }
+        }
+        writeData(ckName, ckHobby, ckVisit)
+      }
+
+
+      function onload(){
+        var ck = document.cookie;
+        var ckItem = ck.split(";");
+        var ckVisit = 1;
+
+        for(i=0; i<ckItem.length; i++){
+          var elem = ckItem[i].split("=");
+          if(elem[0].trim() == "visit"){
+            ckVisit = Number(unescape(elem[1]));
+            ckVisit += 1
+            setinCookie("visit", String(visTimes));
+          }
+          else{
+            ask_name();
+          }
+        }
+        ckPickInfo(ckVisit);
+      }
+      window.onload = onload();
+      //-->
+    </script>
+  </head>
+
+  <body>
+    <h1>Your Page</h1>
+    <div id="name"></div>
+    <div id="hobby"></div>
+    <div id="times"></div>
+    <button onclick="change_hobby()">趣味変更</button>
+    <script type="text/javascript">
+    <!--
+
+    //-->
+    </script>
+  </body>
+</html>
