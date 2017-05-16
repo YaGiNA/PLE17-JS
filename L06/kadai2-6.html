@@ -83,7 +83,7 @@
           if(elem[0].trim() == "visit"){
             ckVisit = Number(unescape(elem[1]));
             ckVisit += 1
-            setinCookie("visit", String(visTimes));
+            setinCookie("visit", String(ckVisit));
           }
           else{
             ask_name();
@@ -98,9 +98,9 @@
 
   <body>
     <h1>Your Page</h1>
-    <div id="name"></div>
-    <div id="hobby"></div>
-    <div id="times"></div>
+    <div id="name">name:</div>
+    <div id="hobby">hobby:</div>
+    <div id="times">times:</div>
     <button onclick="change_hobby()">趣味変更</button>
     <script type="text/javascript">
     <!--
