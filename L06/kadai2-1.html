@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+    <!--
+    function make_oct(){
+      document.open();
+      for(var i=0; i<50; i++){
+        var oct_1st = Math.floor(Math.random() * 8);
+        var oct_2nd = Math.floor(Math.random() * 8);
+        var oct_3rd = Math.floor(Math.random() * 8);
+        if((oct_1st == oct_2nd) && (oct_2nd == oct_3rd)){
+          var outstr = "<font color=red>" +
+            oct_1st + oct_2nd + oct_3rd + "</font><br>"
+        }
+        else{
+          var outstr = oct_1st + oct_2nd + oct_3rd + "<br>";
+        }
+        document.write(outstr);
+      }
+      document.close();
+    }
+
+    //-->
+    </script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      make_oct();
+    </script>
+  </body>
+</html>
