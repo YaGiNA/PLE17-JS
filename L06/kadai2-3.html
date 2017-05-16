@@ -13,8 +13,8 @@
 
     function slide(){
       var y = parseInt(document.getElementById("img1").style.left);
-      y += 10;
       if (y<=400){
+        y += 10;
         var ypx = String(y) + "px";
         document.getElementById("img1").style.left = ypx;
       }
