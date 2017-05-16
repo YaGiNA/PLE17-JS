@@ -18,6 +18,7 @@
     <script type="text/javascript">
     <!--
     function setinCookie(attr, val){
+      // cookie保存
       var cData = attr + "=" + escape(val) + ";";
       var presentDay = new Date;
       var dd = presentDay.getDate();
@@ -29,6 +30,7 @@
 
 
     function ask_name(){
+      // 名前と趣味を聞く
       var visTimes=1;
       var userName = prompt("名前を入力してください");
       if (userName == ""){
@@ -45,6 +47,7 @@
 
 
     function change_hobby(){
+      // 趣味変更
       var hobby = prompt("趣味を入力してください");
       if (hobby == ""){
         change_hobby();
@@ -54,6 +57,7 @@
 
 
     function writeData(ckName, ckHobby, ckVisit){
+      // cookieから取得した情報をhtmlに反映
       var idName = document.getElementById("name");
       console.log(idName)
       var idHobby = document.getElementById("hobby");
@@ -65,6 +69,7 @@
 
 
     function ckPickInfo(ckVisit){
+      // cookieから名前と趣味を取得
       var ck = document.cookie;
       var ckItem = ck.split(";");
       var ckName = ""
@@ -92,6 +97,7 @@
       var ckVisit = 1;
 
       for(i=0; i<ckItem.length; i++){
+        // 訪問回数取得
         var elem = ckItem[i].split("=");
         if(elem[0].trim() == "visit"){
           ckVisit = Number(unescape(elem[1]));
@@ -100,6 +106,7 @@
         }
       }
       if(ckVisit == 1){
+        // 初訪問の場合、名前と趣味を聞く
         ask_name();
       }
       ckPickInfo(ckVisit);
