@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <script type="text/javascript">
     <!--
-    function changeBackColor(){}
-    function intervalChange(){}
+    function changeBackColor(){
+      var color = document.bgColor;
+      if (color == ""){
+        document.bgColor = "black";
+      }else{
+        document.bgColor = "";
+      }
+    }
+    function intervalChange(){
+      setInterval(changeBackColor, 3000);
+    }
     //-->
     </script>
   </head>
-  <body onload="changeBackColor()">
+  <body onload="intervalChange()">
 
   </body>
 </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+ <script type="text/javascript">
+   function popen(){
+    var selected = document.bkmkmenu.bkmks.selectedIndex;
+    openWindow = window.open (document.bkmkmenu.bkmks.options[selected].value);
+   }
+   function pclose(){
+    openWindow.close()
+   }
+  </script>
+ </head>
+ <body>
+  <form name = "bkmkmenu">
+   <select name ="bkmks" size = "1">
+    <option value = "./kadai3-5-1.html">ブックマーク集
+    <option value = "./kadai3-5-2.html">２０１７年残り時間
+    <option value = "./kadai3-5-3.html">背景色自動変更
+  </select>
+  <input type = "button" value ="Open" onclick="popen()">
+  <input type = "button" value ="Close" onclick="pclose()">
+ </form>
+ </body>
+</html>
