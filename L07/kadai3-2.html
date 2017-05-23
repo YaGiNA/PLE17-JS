@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <script type="text/javascript">
+    function scrclr () {
+      for (i=0; i<document.tstform.length; i++) {
+         if (document.tstform.elements[i].type != "button") {
+            document.tstform.elements[i].value = "";
+            }
+      }
+      document.tstform.english.focus ( );
+    }
+
+    function evaluation(pointStr){
+      var eval, cmmt;
+      var point = parseInt(pointStr);
+      console.log(typeof point);
+      switch (true) {
+          case point>=90:
+            eval = "秀";
+            cmmt = "よくできました";
+            break;
+          case point>=80 && point<90:
+            eval = "優";
+            cmmt = "よくできました";
+            break;
+          case point>=70 && point<80:
+            eval = "良";
+            cmmt = "もう少し頑張りましょう"
+            break;
+          case point>=60 && point<70:
+            eval = "可";
+            cmmt = "もう少し頑張りましょう"
+            break;
+          default:
+            eval = "不可";
+            cmmt = "頑張らないと単位がとれないですよ";
+            break;
+       }
+       return [eval, cmmt];
+    }
+
+    function cave() {
+      var pointEng = document.tstform.english.value;      
+      var pointMat = document.tstform.mathmatics.value;
+      var evalsEng = evaluation(pointEng);
+      var evalsMat = evaluation(pointMat);
+      document.tstform.resultEng.value = evalsEng[0];
+      document.tstform.tcmntEng.value = evalsEng[1];
+      document.tstform.resultMat.value = evalsMat[0];
+      document.tstform.tcmntMat.value = evalsMat[1];
+    }
+
+  </script>
+ </head>
+
+ <body onload = "scrclr ( )">
+  <form name = "tstform">
+    英語の点数：<input type = "text" name = "english" size = 3>点
+    数学の点数：<input type = "text" name = "mathmatics" size = 3>点
+  <input type = "button" onclick = "cave()" value = "成績換算">
+  <input type = "button" onclick = "scrclr ()" value = "キャンセル">
+  <p>
+   あなたの英語の成績は、<input type = "text" name = "resultEng" size=3>,です．
+  <br>
+   コメント：<input type = "text" name = "tcmntEng" size = 60><br>
+  <p>
+   あなたの数学の成績は、<input type = "text" name = "resultMat" size=3>,です．
+  <br>
+   コメント：<input type = "text" name = "tcmntMat" size = 60><br>
+  </form>
+ </body>
+
+</html>

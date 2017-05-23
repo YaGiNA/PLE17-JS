@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <script type="text/javascript">
+    function switchImage(){
+      var selected = document.switchImgs.images.selectedIndex;
+      if(selected > 0){
+        var source = document.switchImgs.images.options[selected].value;
+        document.getElementById("img1").src = source;
+        console.log(source)
+      }
+      
+    }
+
+  </script>
+ </head>
+
+ <body>
+  <form name = "switchImgs">
+    <select name="images" size="1" onchange="switchImage()">
+    <option>変更する画像を選択
+    <option value="./imgGreece1.jpg">画像その1
+    <option value="./imgGreece2.jpg">画像その2
+    <option value="./imgGreece3.jpg">画像その3
+  </select>
+  </form>
+  <div>
+    <img src="./imgGreece1.jpg" name="img", id="img1">
+  </div> 
+</body>
+
+</html>

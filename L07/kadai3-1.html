@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <script type="text/javascript">
+  function login(){
+    var username = "user";
+    var password = "pass";
+    var inputUsername, inputPassword;
+    inputUsername = document.forms[0].elements[0].value;
+    inputPassword = document.forms[0].elements[1].value;
+    if(inputUsername == username && inputPassword == password){
+      window.location.href = "http://www.ied.inf.uec.ac.jp/";
+    }
+    else{
+      window.alert("Password incorrect.");
+    }
+  }
+  function visPass () {
+    window.alert (document.forms[0].elements[0].value);
+  }
+  </script>
+ </head>
+ <body>
+  <form name="loginForm">
+  <p>
+    Input username(true is "user"): 
+    <input type="text" size="10" name="userName">
+  </p>
+  <p>
+    Input password(true is "pass"): 
+    <input type="password" size="10" name="passWord">
+  </p>
+   <input type="button" onclick="login()" value="login">
+  </form>
+ </body>
+</html>
