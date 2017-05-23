@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+      function oWindow_jma(){
+        jma_window = window.open(
+          "http://www.jma.go.jp/jma/index.html",
+          "気象庁",
+          "width=400, height=600"
+        );
+      }
+
+      function cWindow_jma(){
+        jma_window.close()
+      }
+
+
+      function oWindow_jra(){
+        jra_window = window.open(
+          "http://www.jra.go.jp/",
+          "JRA: 日本中央競馬会",
+          "width=600, height=400"
+        );
+      }
+      function cWindow_jra(){
+        jra_window.close()
+      }
+
+      
+      function oWindow_jre(){
+        jre_window = window.open(
+          "http://www.jreast.co.jp/",
+          "JR東日本",
+          "width=500, height=500"
+        );
+      }
+      function cWindow_jre(){
+        jre_window.close()
+      }
+
+      
+      function oWindow_jaf(){
+        jaf_window = window.open(
+          "http://www.jaf.or.jp/",
+          "JAF | 日本自動車連盟",
+          "width=500, height=500"
+        );
+      }
+      function cWindow_jaf(){
+        jaf_window.close()
+      }
+
+      
+      function oWindow_jcb(){
+        jcb_window = window.open(
+          "http://www.jcb.co.jp/",
+          "JCBカード",
+          "width=500, height=500"
+        );
+      }
+      function cWindow_jcb(){
+        jcb_window.close()
+      }
+    </script>
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <td>サイト名</td>
+        <td>URL</td>
+        <td>Buttons</td>
+      </tr>
+      <tr>
+        <td>気象庁</td>
+        <td>www.jma.go.jp</td>
+        <td>
+          <button onclick="oWindow_jma()">開く</button>
+          <button onclick="cWindow_jma()">閉じる</button>
+        </td>
+      </tr>
+      <tr>
+        <td>日本中央競馬会</td>
+        <td>www.jra.go.jp</td>
+        <td>
+          <button onclick="oWindow_jra()">開く</button>
+          <button onclick="cWindow_jra()">閉じる</button>
+        </td>
+      </tr>
+      <tr>
+        <td>JR東日本</td>
+        <td>www.jreast.co.jp</td>
+        <td>
+          <button onclick="oWindow_jre()">開く</button>
+          <button onclick="cWindow_jre()">閉じる</button>
+        </td>
+      </tr>
+        <td>日本自動車連盟</td>
+        <td>www.jaf.or.jp/</td>
+        <td>
+          <button onclick="oWindow_jaf()">開く</button>
+          <button onclick="cWindow_jaf()">閉じる</button>
+        </td>
+      </tr>
+        <td>JCBカード</td>
+        <td>www.jcb.co.jp/</td>
+        <td>
+          <button onclick="oWindow_jcb()">開く</button>
+          <button onclick="cWindow_jcb()">閉じる</button>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
