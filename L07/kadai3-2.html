@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
+  <meta charset="UTF-8">
   <script type="text/javascript">
     function scrclr () {
       for (i=0; i<document.tstform.length; i++) {
@@ -11,43 +12,46 @@
       document.tstform.english.focus ( );
     }
 
-    function evaluation(point){
-      var eval;
-      switch (point) {
+    function evaluation(pointStr){
+      var eval, cmmt;
+      var point = parseInt(pointStr);
+      console.log(typeof point);
+      switch (true) {
           case point>=90:
             eval = "秀";
+            cmmt = "よくできました";
             break;
           case point>=80 && point<90:
             eval = "優";
+            cmmt = "よくできました";
             break;
           case point>=70 && point<80:
             eval = "良";
+            cmmt = "もう少し頑張りましょう"
             break;
           case point>=60 && point<70:
             eval = "可";
+            cmmt = "もう少し頑張りましょう"
             break;
           default:
             eval = "不可";
+            cmmt = "頑張らないと単位がとれないですよ";
             break;
        }
-       return eval;
-}
-
-    function cave () {
-      var pointEng = document.tstform.english.value;
-      var pointMat = document.tstform.mathmatics.value;
-      var evalEng = 
-      }
-
-      document.tstform.tresult.value = (parseInt(document.tstform.english.value) + parseInt(document.tstform.mathmatics.value))/2;
-      if (document.tstform.tresult.value < 60) {
-         document.tstform.tcmnt.value = "頑張らないと単位がとれないですよ";
-              } else if (document.tstform.tresult.value < 80) {
-                   document.tstform.tcmnt.value = "もう少し頑張りましょう";
-                   } else {
-                        document.tstform.tcmnt.value = "よくできました";
-                     }
+       return [eval, cmmt];
     }
+
+    function cave() {
+      var pointEng = document.tstform.english.value;      
+      var pointMat = document.tstform.mathmatics.value;
+      var evalsEng = evaluation(pointEng);
+      var evalsMat = evaluation(pointMat);
+      document.tstform.resultEng.value = evalsEng[0];
+      document.tstform.tcmntEng.value = evalsEng[1];
+      document.tstform.resultMat.value = evalsMat[0];
+      document.tstform.tcmntMat.value = evalsMat[1];
+    }
+
   </script>
  </head>
 
@@ -60,11 +64,11 @@
   <p>
    あなたの英語の成績は、<input type = "text" name = "resultEng" size=3>,です．
   <br>
-   コメント：<input type = "text" name = "tcmnt" size = 60><br>
+   コメント：<input type = "text" name = "tcmntEng" size = 60><br>
   <p>
    あなたの数学の成績は、<input type = "text" name = "resultMat" size=3>,です．
   <br>
-   コメント：<input type = "text" name = "tcmnt" size = 60><br>
+   コメント：<input type = "text" name = "tcmntMat" size = 60><br>
   </form>
  </body>
 
