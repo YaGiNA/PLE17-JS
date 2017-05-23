@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <script type="text/javascript">
+    function switchColor(){
+      var flag = false;
+      for(var i=0; i<document.switchColors.color.length; i++){
+        if(document.switchColors.color[i].checked){
+          var color = document.switchColors.color[i].value;
+          document.getElementById("letters").color = color;
+          flag = true;
+        }
+      }
+      
+    }
+
+  </script>
+ </head>
+
+ <body>
+  <form name="switchColors">
+   <input type="radio" name="color" value="red">RED<br>
+   <input type="radio" name="color" value="blue">BLUE<br>
+   <input type="radio" name="color" value="yellow">YELLOW<br>
+   <input type="radio" name="color" value="black">BLACK<br>
+   <input type="radio" name="color" value="green">GREEN<br>
+   <p>
+   <input type="button" value="press to chenge color" onclick="switchColor()">
+  </form>
+  <font color="blue" id="letters">■■■■■</font>
+</body>
+
+</html>
